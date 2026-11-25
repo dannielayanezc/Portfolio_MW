@@ -1,0 +1,10 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de trabajo que no se publican
+*.zip
+*.ai
+*.docx
+*.pdf
+~$*
