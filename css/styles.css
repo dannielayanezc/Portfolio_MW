@@ -873,3 +873,6 @@ main { position: relative; z-index: 1; }
 
 /* Logo de Baygon con escudo: sombra para separarlo del rojo de la cápsula */
 .capsule__mark img[src*="baygon-logo"], .mini img[src*="baygon-logo"] { filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .6)) drop-shadow(0 0 1px rgba(255, 255, 255, .5)); }
+
+/* Tira de disciplinas oculta por ahora */
+.disciplines[hidden] { display: none !important; }

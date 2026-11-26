@@ -421,7 +421,7 @@ class Marquee {
 /* =========================================================
    Disciplinas (cinta)
    ========================================================= */
-const ribbonTrack = $('#ribbonTrack');
+const ribbonTrack = $('#disciplinas:not([hidden]) #ribbonTrack'); // la tira solo funciona si su sección está visible
 const spark = '<svg class="ribbon__spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0z"/></svg>';
 function ribbonSet(clone) {
   const frag = document.createElement('div');
