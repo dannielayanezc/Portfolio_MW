@@ -41,9 +41,9 @@
     </a>
 
     <nav class="nav__links" aria-label="Principal">
+      <a href="#trabajo" class="nav__link">Trabajo</a>
       <a href="#sobre-mi" class="nav__link">Sobre mí</a>
       <a href="#herramientas" class="nav__link">Herramientas</a>
-      <a href="#trabajo" class="nav__link">Trabajo</a>
       <a href="#contacto" class="nav__link">Contacto</a>
     </nav>
 
@@ -55,9 +55,9 @@
   <!-- Menú móvil a pantalla completa -->
   <div class="menu-panel" id="menuPanel" hidden>
     <nav aria-label="Menú móvil">
+      <a href="#trabajo" class="menu-panel__link">Trabajo</a>
       <a href="#sobre-mi" class="menu-panel__link">Sobre mí</a>
       <a href="#herramientas" class="menu-panel__link">Kit</a>
-      <a href="#trabajo" class="menu-panel__link">Trabajo</a>
       <a href="#contacto" class="menu-panel__link">Contacto</a>
     </nav>
   </div>
@@ -77,15 +77,39 @@
           <span class="hero__word hero__word--folio">FOLIO</span>
         </div>
       </div>
-      <div class="hero__actions">
-        <a href="#trabajo" class="btn btn--primary">
-          Ver mi trabajo
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
-        </a>
+    </section>
+    <!-- ===================== 2 · DISCIPLINAS FAVORITAS ===================== -->
+    <section class="disciplines moment" id="disciplinas" aria-label="Disciplinas favoritas" data-aurora="#2B59FF,#FF8466,#7B5CFF,#E557A8">
+      <div class="ribbon" id="ribbon">
+        <div class="ribbon__track" id="ribbonTrack">
+          <!-- Las disciplinas se generan en js/main.js -->
+        </div>
+      </div>
+      <p class="disciplines__hint container">Toca una disciplina para ver los proyectos relacionados.</p>
+    </section>
+    <!-- ===================== 3 · MI TRABAJO ===================== -->
+    <section class="work moment" id="trabajo" data-aurora="#2B59FF,#7B5CFF,#FF8466,#1E3BB3">
+      <div class="container">
+        <h2 class="display work__title" data-reveal aria-label="Trabajo"><span class="letra-t" aria-hidden="true">T</span><span aria-hidden="true">RABAJO</span></h2>
+        <div class="chips" id="chips" role="group" aria-label="Filtrar proyectos por categoría">
+          <!-- Las etiquetas se generan en js/main.js -->
+        </div>
+      </div>
+      <!-- Lista de proyectos solo para impresión (se llena en js/main.js) -->
+      <ul class="print-proyectos container" id="printProyectos"></ul>
+      <div class="work__marco">
+        <div class="work__viewport" id="workViewport">
+          <div class="work__track" id="workTrack">
+            <!-- Las cápsulas se generan en js/main.js -->
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- ===================== 2 · SOBRE MÍ ===================== -->
+    <!-- ===================== 4 · DENTRO DE UN PROYECTO ===================== -->
+    <section class="project moment" id="proyecto" hidden>
+      <!-- Se llena desde js/main.js al hacer clic en una cápsula -->
+    </section>
+    <!-- ===================== 5 · SOBRE MÍ ===================== -->
     <section class="about moment" id="sobre-mi" data-aurora="#2B59FF,#BBA9FF,#E557A8,#5CCBF0">
       <div class="container about__grid">
         <figure class="about__photo" data-reveal>
@@ -107,16 +131,15 @@
           </dl>
           <p class="eyebrow">Lo que me inspira</p>
           <ul class="tags" aria-label="Intereses">
-            <li class="tag" style="--tag: #6A4BE8">Moda</li>
-            <li class="tag" style="--tag: #C93D8C">Make-up</li>
-            <li class="tag" style="--tag: #1C7FB0">Música</li>
-            <li class="tag" style="--tag: #5A8A12">Color</li>
+            <li class="tag">Moda</li>
+            <li class="tag">Make-up</li>
+            <li class="tag">Música</li>
+            <li class="tag">Color</li>
           </ul>
         </div>
       </div>
     </section>
-
-    <!-- ===================== 3 · MI FORMA DE DISEÑAR ===================== -->
+    <!-- ===================== 6 · MI FORMA DE DISEÑAR ===================== -->
     <section class="manifesto moment" id="forma" data-aurora="#1E3BB3,#7B5CFF,#E557A8,#2B59FF">
       <div class="container">
         <div class="manifesto__copy">
@@ -129,18 +152,7 @@
         </div>
       </div>
     </section>
-
-    <!-- ===================== 4 · DISCIPLINAS FAVORITAS ===================== -->
-    <section class="disciplines moment" id="disciplinas" aria-label="Disciplinas favoritas" data-aurora="#2B59FF,#FF8466,#7B5CFF,#E557A8">
-      <div class="ribbon" id="ribbon">
-        <div class="ribbon__track" id="ribbonTrack">
-          <!-- Las disciplinas se generan en js/main.js -->
-        </div>
-      </div>
-      <p class="disciplines__hint container">Toca una disciplina para ver los proyectos relacionados.</p>
-    </section>
-
-    <!-- ===================== 5 · MIS HERRAMIENTAS ===================== -->
+    <!-- ===================== 7 · MIS HERRAMIENTAS ===================== -->
     <section class="tools moment" id="herramientas" data-aurora="#1E3BB3,#7B5CFF,#2B59FF,#5CCBF0">
       <div class="container">
         <div class="tools__head" data-reveal>
@@ -152,31 +164,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ===================== 6 · MI TRABAJO ===================== -->
-    <section class="work moment" id="trabajo" data-aurora="#2B59FF,#7B5CFF,#FF8466,#1E3BB3">
-      <div class="container">
-        <h2 class="display work__title" data-reveal aria-label="Trabajo"><span class="letra-t" aria-hidden="true">T</span><span aria-hidden="true">RABAJO</span></h2>
-        <div class="chips" id="chips" role="group" aria-label="Filtrar proyectos por categoría">
-          <!-- Las etiquetas se generan en js/main.js -->
-        </div>
-      </div>
-      <!-- Lista de proyectos solo para impresión (se llena en js/main.js) -->
-      <ul class="print-proyectos container" id="printProyectos"></ul>
-      <div class="work__marco">
-        <div class="work__viewport" id="workViewport">
-          <div class="work__track" id="workTrack">
-            <!-- Las cápsulas se generan en js/main.js -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== 7 · DENTRO DE UN PROYECTO ===================== -->
-    <section class="project moment" id="proyecto" hidden>
-      <!-- Se llena desde js/main.js al hacer clic en una cápsula -->
-    </section>
-
     <!-- ===================== 8 · CONTACTO ===================== -->
     <section class="contact moment" id="contacto" data-aurora="#1E3BB3,#2B59FF,#7B5CFF,#E557A8">
       <div class="container">
@@ -216,7 +203,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- ===================== FOOTER ===================== -->

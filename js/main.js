@@ -68,10 +68,6 @@ const PROYECTOS = [
           'La elección de utilizar el logotipo de Baygon en caja alta busca reforzar su carácter contemporáneo, sólido y profesional. El uso exclusivo de mayúsculas aporta firmeza y uniformidad, y transmite modernidad, confianza y autoridad, en concordancia con la promesa de eficacia y protección de la marca.',
           'La composición se desarrolló a partir de dos tipografías distintas, que después fueron intervenidas para construir una identidad visual que proyecta solidez, seguridad y una imagen renovada, sin perder la esencia reconocible de Baygon.',
         ] },
-        { tipo: 'texto', titulo: 'Paleta cromática', parrafos: [
-          'La paleta cromática conserva los colores históricos de Baygon, lo que refuerza su reconocimiento y su continuidad visual. El rojo se mantiene como distintivo del logotipo, asociado con energía, alerta y acción inmediata, mientras que los verdes tradicionales de los empaques se refinan para preservar su familiaridad y transmitir frescura y protección del entorno doméstico.',
-          'El negro se incorpora en la línea Max para comunicar mayor potencia, rendimiento y una imagen premium. Por su parte, el azul oscuro se reserva para productos como los espirales, y se vincula con la noche, el descanso y la tranquilidad que representa la protección continua.',
-        ], paleta: ['#ACD8A7', '#024C26', '#E12126', '#000000'] },
         { tipo: 'envases', titulo: 'Rediseño de etiquetas', parrafos: [
           'Las etiquetas llevan la nueva identidad a cada línea de producto sin perder lo que el consumidor ya reconoce: el triángulo rojo del logotipo, las ilustraciones de los insectos, el ícono de la casa y el color que distingue a cada línea, verde para Casa y Jardín y para la vela de citronela, y una nueva propuesta de Baygon Max con una etiqueta negra.',
           'Esta propuesta se presenta en una textura metálica que eleva la percepción del producto hacia una experiencia más premium.',
@@ -83,6 +79,10 @@ const PROYECTOS = [
             { frames: 'assets/giro/baygon/casa-jardin-400/', n: 144, w: 520, h: 958, titulo: 'Casa y Jardín · 400 ml' },
             { frames: 'assets/giro/baygon/casa-jardin-285/', n: 144, w: 520, h: 958, titulo: 'Casa y Jardín · 285 ml' },
           ] },
+        { tipo: 'texto', titulo: 'Paleta cromática', parrafos: [
+          'La paleta cromática conserva los colores históricos de Baygon, lo que refuerza su reconocimiento y su continuidad visual. El rojo se mantiene como distintivo del logotipo, asociado con energía, alerta y acción inmediata, mientras que los verdes tradicionales de los empaques se refinan para preservar su familiaridad y transmitir frescura y protección del entorno doméstico.',
+          'El negro se incorpora en la línea Max para comunicar mayor potencia, rendimiento y una imagen premium. Por su parte, el azul oscuro se reserva para productos como los espirales, y se vincula con la noche, el descanso y la tranquilidad que representa la protección continua.',
+        ], paleta: ['#ACD8A7', '#024C26', '#E12126', '#000000'] },
       ],
     } },
   { id: 'ficm', nombre: 'FICM', categoria: 'Campaña publicitaria', filtros: ['Campañas'],
@@ -763,9 +763,12 @@ function openProject(id) {
         <li>${p.modalidadSinTitulo ? '' : '<b>Modalidad:</b> '}${p.modalidad}</li>
         <li><b>Herramientas:</b> ${p.herramientas}</li>
       </ul>
+      <div class="project__links">
+        <a class="btn btn--primary" href="${p.enlace}" target="_blank" rel="noopener">${p.enlaceTexto || 'Ver en Behance'}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
       ${c ? c.bloques.map(renderBloque).join('') : contenidoBase(p)}
       <div class="project__actions">
-        <a class="btn btn--primary" href="${p.enlace}" target="_blank" rel="noopener">${p.enlaceTexto || 'Ver en Behance'}</a>
         <button class="btn btn--secondary js-back">Volver al trabajo</button>
       </div>
       <div class="project__more">
