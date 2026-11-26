@@ -55,7 +55,7 @@ const PROYECTOS = [
     descripcion: 'Rediseño integral de la identidad visual de Baygon y su aplicación en envases.',
     aurora: ['#8E1418', '#E12126', '#1F6B2A', '#2B59FF'],
     anio: '2025', rol: 'Rediseño de identidad y empaque', modalidad: 'Individual', herramientas: 'Illustrator y Photoshop',
-    logoCapsula: 'assets/img/proyectos/baygon/baygon-palabra.svg', logoAncho: 150,
+    logoCapsula: 'assets/img/proyectos/baygon/baygon-logo.svg', logoAncho: 165,
     contenido: {
       bloques: [
         { tipo: 'texto', titulo: 'El proyecto', parrafos: [
