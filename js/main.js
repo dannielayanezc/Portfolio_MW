@@ -127,15 +127,15 @@ const PROYECTOS = [
           'Esencia de Invierno, <b>frescura</b> y <b>cuidado</b> en cada instante para brindarte tranquilidad y seguridad en tu día a día.',
           'Kleenex Esencia de Invierno: <b>evoca frescura y&nbsp;cuidado.</b>',
         ] },
-        { tipo: 'texto', titulo: 'Paleta cromática', parrafos: [
-          'Los empaques se lograron mediante la modificación cromática de un módulo de formas previamente diseñado, con una paleta que evocara el invierno, la frescura y el cuidado.',
-        ], paleta: ['#97D3F1', '#CAE5F3', '#69A5D9', '#427CBF', '#DECEE5'] },
         { tipo: 'vitrina', titulo: 'Propuestas de empaque', items: [
           { src: 'assets/img/proyectos/kleenex/cilindrico.webp', alt: 'Empaque cilíndrico de Kleenex Winter', titulo: 'Cilíndrico' },
           { src: 'assets/img/proyectos/kleenex/piramidal.webp', alt: 'Empaque piramidal de Kleenex Winter', titulo: 'Piramidal' },
           { src: 'assets/img/proyectos/kleenex/cubico.webp', alt: 'Empaque cúbico de Kleenex Winter con un pañuelo saliendo', titulo: 'Cúbico' },
           { src: 'assets/img/proyectos/kleenex/rectangular.webp', alt: 'Empaque rectangular de Kleenex Winter con un pañuelo saliendo', titulo: 'Rectangular' },
         ] },
+        { tipo: 'texto', titulo: 'Paleta cromática', parrafos: [
+          'Los empaques se lograron mediante la modificación cromática de un módulo de formas previamente diseñado, con una paleta que evocara el invierno, la frescura y el cuidado.',
+        ], paleta: ['#97D3F1', '#CAE5F3', '#69A5D9', '#427CBF', '#DECEE5'] },
       ],
     } },
   { id: 'libro-azul', nombre: 'Libro Azul', categoria: 'Arte 3D', filtros: ['3D'],
