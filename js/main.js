@@ -432,9 +432,10 @@ function ribbonSet(clone) {
   ).join('');
   return frag;
 }
-ribbonTrack.append(ribbonSet(false), ribbonSet(true));
-const ribbon = new Marquee($('#ribbon'), ribbonTrack, { speed: 45, dir: DIRECCION_CINTA });
-ribbonTrack.addEventListener('click', e => {
+// La cinta solo se arma si su sección está en index.html (de momento está oculta)
+if (ribbonTrack) ribbonTrack.append(ribbonSet(false), ribbonSet(true));
+const ribbon = ribbonTrack ? new Marquee($('#ribbon'), ribbonTrack, { speed: 45, dir: DIRECCION_CINTA }) : null;
+if (ribbonTrack) ribbonTrack.addEventListener('click', e => {
   const b = e.target.closest('[data-filter]');
   if (!b) return;
   applyFilter(b.dataset.filter);
@@ -851,12 +852,12 @@ function loop(now) {
   const dt = Math.min((now - last) / 1000, 0.05);
   last = now;
   scrollBoost *= Math.pow(0.04, dt);   // el impulso del scroll se desvanece
-  ribbon.tick(dt);
+  if (ribbon) ribbon.tick(dt);
   work.tick(dt);
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
-window.addEventListener('load', () => { ribbon.measure(); work.measure(); });
+window.addEventListener('load', () => { if (ribbon) ribbon.measure(); work.measure(); });
 
 /* =========================================================
    Visor de imágenes: se sobrepone al contenido sin moverlo.
