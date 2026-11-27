@@ -341,6 +341,8 @@ class Marquee {
     window.addEventListener('resize', () => this.measure());
   }
   measure() {
+    // conserva el lugar visible de la línea aunque cambie su largo
+    if (this.setWidth) { const w0 = this.setWidth; this.offset = ((this.offset % w0) + w0) % w0; }
     $$('[data-clone]', this.track).forEach(c => { c.hidden = false; });
     const half = this.track.scrollWidth / 2;
     this.setWidth = half;
@@ -398,7 +400,8 @@ class Marquee {
     if (this.pausa > 0) this.pausa -= dt;
     const quieto = this.hover || this.drag || this.locked || this.tween || this.pausa > 0;
     const target = quieto ? 0 : this.base + (reduceMotion ? 0 : scrollBoost);
-    this.current += (target - this.current) * Math.min(1, dt * 4);
+    this.current += (target - this.current) * Math.min(1, dt * (target === 0 ? 9 : 4)); // frena rápido, arranca suave
+    if (target === 0 && Math.abs(this.current) < 0.5) this.current = 0; // se detiene por completo
     if (this.tween) {
       const t = Math.min(1, (performance.now() - this.tween.t0) / this.tween.dur);
       const e = 1 - Math.pow(1 - t, 3);
@@ -414,6 +417,7 @@ class Marquee {
     }
     const w = this.setWidth;
     const pos = ((this.offset % w) + w) % w;
+    if (!this.tween && !this.drag) this.offset = pos; // mantiene el desplazamiento dentro de una vuelta
     this.track.style.transform = `translate3d(${(-w + pos).toFixed(2)}px,0,0)`;
   }
 }
@@ -605,13 +609,8 @@ function applyFilter(f) {
   });
   setTimeout(() => work.measure(), 650);
 }
-// Vuelve a medir cuando las cápsulas terminan de encogerse o crecer
-let remeasure = null;
-workTrack.addEventListener('transitionend', e => {
-  if (e.propertyName !== 'width' || !e.target.classList.contains('capsule')) return;
-  cancelAnimationFrame(remeasure);
-  remeasure = requestAnimationFrame(() => work.measure());
-});
+// La línea solo se vuelve a medir al filtrar (applyFilter), nunca al pasar el cursor:
+// si se midiera con una cápsula ensanchada por el hover, la línea brincaba de lugar.
 
 workTrack.addEventListener('click', e => {
   const c = e.target.closest('.capsule');
